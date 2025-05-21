@@ -44,6 +44,10 @@ jobs:
         pip install -r requirements.txt
         pip install pytest pytest-django python-dotenv
 
+    - name: Run migrations
+      run: |
+        python manage.py migrate
+
     - name: Run tests
       run: |
         pytest
